@@ -1,25 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { add, subtraction } from './actions'
 
-class App extends Component {
-  render() {
-    console.log(this.props)
-    const {
-      count,
-      add,
-      subtraction
-    } = this.props
-
-    return (
-      <div>
-        <button onClick={add}>+</button>
+function App(props) {
+  const {
+    count,
+    add,
+    subtraction
+  } = props
+  return (
+    <div>
+      <button onClick={add}>+5</button>
         count { count}
-        <button onClick={subtraction}>-</button>
-      </div>
-    )
-  }
+      <button onClick={subtraction}>-5</button>
+    </div>
+  )
 }
 
 const mapStateToProps = (state) => {
